@@ -53,7 +53,6 @@ void setup() {
   digitalWrite(8, LOW);
   digitalWrite(9, LOW);
   digitalWrite(10, LOW);
-  Serial.begin (9600); // 9600 bps
 }
 
 void loop() {
@@ -64,17 +63,9 @@ void loop() {
   int speed = (abs(x-xZero)+4)/xRatio;
   if (speed > 255) speed = 255;
   float s = speed*9/255;
-  Serial.println(s);
 
   showNumber(s);
   analogWrite(motorPin, speed);
-
-  Serial.print (speed, DEC);
-  Serial.print (",");
-  Serial.print (abs(y-yZero), DEC);
-  Serial.print (",");
-  Serial.println (z, DEC);
-
   delay(100);
 }
 
@@ -89,7 +80,6 @@ void showNumber(char c) {
 }
 
  void bitAction(char b, char pin) {
-  Serial.println("action");
    if (!b) {
      digitalWrite(pin, HIGH);
    }

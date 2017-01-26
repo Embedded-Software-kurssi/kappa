@@ -79,7 +79,6 @@ void loop() {
   float s = speed*9/255;l
 
   showNumber(s);
-  //analogWrite(motorPin, speed);
 
   if (speed < blueSection) {
     digitalWrite(blueLed, HIGH);
@@ -90,7 +89,7 @@ void loop() {
     digitalWrite(redLed, LOW);
     digitalWrite(greenLed, HIGH);   
   } else {
-     digitalWrite(blueLed, LOW);
+    digitalWrite(blueLed, LOW);
     digitalWrite(redLed, HIGH);
     digitalWrite(greenLed, LOW);      
   }
